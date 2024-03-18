@@ -47,7 +47,9 @@ $navElements = [[
 <div id="external">
     <div class="container py-3 d-flex justify-content-between align-items-center">
         <figure>
-            <img src={{ Vite::asset("resources/img/dc-logo.png")}} alt="Header Logo">
+            <a href="{{route("homePage")}}">
+                <img src={{ Vite::asset("resources/img/dc-logo.png")}} alt="Header Logo">
+            </a>
         </figure>
         <nav class="d-flex align-items-center">
             <ul class="d-flex gap-3 text-uppercase">
