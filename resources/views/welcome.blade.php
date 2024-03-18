@@ -107,7 +107,7 @@
         @foreach ($comics as $singleComic)
             <div class="singleCard d-flex flex-column gap-2">
                 <figure>
-                    <img src="<?= $singleComic["thumb"] ?>" alt="">
+                    <a href="{{route("comics.show", ["comic" => $singleComic["id"]])}}"><img src="<?= $singleComic["thumb"] ?>" alt=""></a>
                 </figure>
                 <span> <?= $singleComic["series"] ?> </span>
             </div>
