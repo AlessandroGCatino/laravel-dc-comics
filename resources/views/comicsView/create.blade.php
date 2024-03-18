@@ -2,8 +2,8 @@
 
 @section('title', 'DC Comics | Create')
 
-@section('main')
-    <main>
+@section('content')
+    <div>
         <h2>Crea un nuovo prodotto</h2>
 
         <div class="container">
@@ -86,5 +86,5 @@
 
             </form>
         </div>
-    </main>
+    </div>
 @endsection
