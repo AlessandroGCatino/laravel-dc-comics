@@ -31,15 +31,20 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newProduct = $request->all();
+        $newComic = new Comic();
+        $newComic->fill($newProduct);
+        $newComic->save();
+
+        return redirect()->route("comics.index");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        //
+        return view('comicsView.show', compact('comic'));
     }
 
     /**
