@@ -1,6 +1,5 @@
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
-
+@use "./partials/_variables" as *;
+@use "./partials/_mixins" as *;
 @import "bootstrap/scss/bootstrap";
 
 * {
@@ -18,6 +17,10 @@ img {
     display: block;
 }
 
+figure{
+    margin: 0;
+}
+
 li {
     list-style-type: none;
 }
@@ -25,13 +28,163 @@ li {
 a {
     text-decoration: none;
     color: black;
-
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 button:hover {
     cursor: pointer;
 }
 
+
+
+header {
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            gap: 20px;
+        }
+    }
+}
+
+main{
+    background-image: url("../img/jumbotron.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 400px;
+}
+
+#heroesBack{
+    background-image: url("../img/footer-bg.jpg");
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+#heroesBack .left-column{
+    padding-block: 30px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#heroesBack a{
+    text-decoration: none;
+    color: white;
+}
+#heroesBack .left-column ul{
+    padding: 0;
+    align-items: flex-start;
+}
+
+#heroesBack .left-column ul li a{
+    color: grey;
+}
+
+#heroesBack .left-column ul li a:hover{
+    color: white
+};
+
+#heroesBack .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#heroesBack .right-column{
+    height: 400px;
+    background-image: url("../img/dc-logo-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.social .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3{
+        color: $dc-blue;
+        font-weight: 700;
+        letter-spacing: .1rem;
+    }
+}
+
+.social{
+    background-color: #303030;
+    padding: 30px;
+    align-items: center;
+    justify-content: space-between;
+    a{
+        border: 2px solid $dc-blue;
+        letter-spacing: .2rem;
+        font-size: 20px;
+        padding: 15px;
+        color: white;
+    };
+    
+}
+div.backContent{
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    }
+
+    div.backContent button{
+        width: 200px;
+        text-transform: uppercase;
+        border-radius: 0;
+        letter-spacing: 0.1rem;
+    }
+    div.backContent div{
+        position: relative;
+        
+    }
+    div.backContent div h3{
+            position: absolute;
+            top:-27px;
+            left: 40px;
+            color: white;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            background-color: #0282f9;
+    
+    }
+
+    .singleCard{
+    width: calc(100%/6);
+    padding: 20px;
+    }
+    .singleCard span{ 
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    .singleCard figure{
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+    }
+    .singleCard figure img{
+        width: 100%;
+        display: block;
+    
+    }
+
+    #ctaBack{
+        padding-block: 10px;
+        background-color: #0282f9;
+        color: white;
+        font-weight: 500;
+    }
+
+    #ctaBack figure img{
+        width: 45px;
+    }
