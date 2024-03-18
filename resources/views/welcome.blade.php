@@ -113,7 +113,7 @@
             </div>
         @endforeach
         </div>
-        <button class="btn btn-primary">load more</button>
+        <a href="{{route("comics.create")}}"><button class="btn btn-primary">Crea nuovo</button></a>
     </div>
 </main>
 <div class="CtaUser">
