@@ -107,9 +107,19 @@
         @foreach ($comics as $singleComic)
             <div class="singleCard d-flex flex-column gap-2">
                 <figure>
-                    <a href="{{route("comics.show", ["comic" => $singleComic["id"]])}}"><img src="<?= $singleComic["thumb"] ?>" alt=""></a>
+                    <a href="{{route("comics.show", ["comic" => $singleComic["id"]])}}">
+                        <img src="<?= $singleComic["thumb"] ?>" alt="">
+                    </a>
+                    <div class="close" title="Elimina fumetto">
+                        <form action="{{route("comics.destroy", $singleComic)}}" method="POST">
+                            @csrf
+                            @method("delete")
+                            <input type="submit" class="btn" value="X">
+                        </form>
+                        {{-- <a  href="" ><span>&cross;</span></a> --}}
+                    </div>
                 </figure>
-                <span> <?= $singleComic["series"] ?> </span>
+                <span><?= $singleComic["series"] ?></span>
             </div>
         @endforeach
         </div>
