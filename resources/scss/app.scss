@@ -161,6 +161,7 @@ div.backContent{
     .singleCard{
     width: calc(100%/6);
     padding: 20px;
+    
     }
     .singleCard span{ 
         color: white;
@@ -171,10 +172,35 @@ div.backContent{
         width: 100%;
         aspect-ratio: 1;
         overflow: hidden;
+        position: relative;
+        &:hover .close{
+            display: block;
+        }
+        .close{
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            aspect-ratio: 1;
+            width: 24px;
+            border-radius: 50%;
+            text-align: center;
+            input{
+                padding: 0;
+            }
+            span{
+                color: white;
+                overflow: hidden;
+            }
+        }
     }
     .singleCard figure img{
         width: 100%;
         display: block;
+        &:hover{
+            opacity: 0.4;
+        }
     
     }
 
