@@ -20,6 +20,12 @@
         <p>{{$comic->sale_date}}</p>
         <p class="text-capitalize">{{$comic->type}}</p>
 
+        <a href="{{route("comics.edit", $comic)}}">
+            <button class="btn btn-primary">
+                Modifica
+            </button>
+        </a>
+
 
     </div>
 @endsection
