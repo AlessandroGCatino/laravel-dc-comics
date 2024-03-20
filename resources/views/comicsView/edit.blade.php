@@ -8,6 +8,15 @@
         
 
             <div class="container">
+                @if ($errors->any())
+                    <div class="alert alert-danger ">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{route("comics.update", $comic)}}" method="POST">
                     @csrf
                     @method("PUT")
@@ -18,14 +27,14 @@
                             class="form-control"
                             name="title"
                             id="title"
-                            value="{{$comic->title}}"
+                            value="{{old('title') ?? $comic->title}}"
                         />
                     </div>
     
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
                         <textarea class="form-control" name="description" id="description" rows="3">
-                            {{$comic->description}}"
+                            {{old('description') ?? $comic->description}}"
                         </textarea>
                     </div>
     
@@ -37,7 +46,7 @@
                             class="form-control"
                             name="thumb"
                             id="thumb"
-                            value="{{$comic->thumb}}"
+                            value="{{old('thumb') ?? $comic->thumb}}"
                         />
                     </div>
     
@@ -48,7 +57,7 @@
                             class="form-control"
                             name="price"
                             id="price"
-                            value="{{$comic->price}}"
+                            value="{{old('price') ?? $comic->price}}"
                         />
                     </div>
     
@@ -59,7 +68,7 @@
                             class="form-control"
                             name="series"
                             id="series"
-                            value="{{$comic->series}}"
+                            value="{{old('series') ?? $comic->series}}"
                         />
                     </div>
     
@@ -70,7 +79,7 @@
                             class="form-control"
                             name="sale_date"
                             id="sale_date"
-                            value="{{$comic->sale_date}}"
+                            value="{{old('sale_date') ?? $comic->sale_date}}"
                         />
                     </div>
     
@@ -81,7 +90,7 @@
                             class="form-control"
                             name="type"
                             id="type"
-                            value="{{$comic->type}}"
+                            value="{{old('type') ?? $comic->type}}"
                         />
                     </div>
     
